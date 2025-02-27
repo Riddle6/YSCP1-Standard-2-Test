@@ -1,0 +1,83 @@
+BEGIN
+    PRINT Welcome Statement to the Program.
+
+    Ask the user to input their bill amount.
+    Ask the user to input their tip as a percent (%).
+
+    Calculate the tip percentage to a Float (Tip Percent / 100)
+
+    Calculate the Total Tip (Bill * Tip Percent)
+    Calculate the Total Bill (Bill + Total Tip)
+
+    PROMPT the calculator summary.
+    PRINT their Bill amount.
+    PRINT their Tip amount.
+    PRINT their Total Bill amount.
+
+    PRINT a Thank You/Goodbye message for using the program.
+END
+
+
+FUNCTION main():
+    PRINT Welcome to the Tip Calculator
+
+
+--- Ask User for Bill Amount ---
+
+FUNCTION get_bill_amount():
+
+    LOOP forever
+
+        IF bill_amount > 0:
+            RETURN bill_amount
+        ELSE
+            PROMPT Negative Value error message.
+
+        IF an EXCEPTION ValueError is triggered:
+            PROMPT Invalid Value error message.
+
+    
+--- Ask User for Tip Amount ---
+
+FUNCTION get_tip_percent():
+
+    LOOP forever
+
+        IF tip_percent > 0:
+            RETURN tip_percent
+        ELSE
+            PROMPT Negative Value error message.
+
+        IF an EXCEPTION ValueError is triggered:
+            PROMPT Invalid Value error message.
+
+--- Calculate Tip Amount and Total Bill: ---
+    
+FUNCTION calculate_bills(tip_percent, bill_amount):
+
+    total_tip = tip_percent * bill_amount
+    total_bill = total_tip + bill_amount
+
+
+FUNCTION display_summary(bill_amount, total_tip, total_bill):
+
+    PROMPT Tip Calculator Summary:
+
+    PRINT Bill Amount: + formatted bill_amount
+    PRINT Tip Amount: + formatted total_tip
+    PRINT Total Bill: + formatted total_bill
+
+
+    PRINT Thank You for using the Tip Calculator!
+
+
+-----------------------------------------------------------------------------------
+Changes made while creating the Tip Calculator code or Pseudo-code:
+
+1. Created separate functions instead of a single main() due to the LOOP forever interfering with the EXCEPTION or
+   the 2nd LOOP code would be unreachable.
+
+2. Merged display_summary() and calculate_bills() into a single function; get_summary() due to too many parameters.
+   There were more parameters than there were with the amount of functions that could be called.
+
+3. Changed the Total_Bill to a constant variable.
